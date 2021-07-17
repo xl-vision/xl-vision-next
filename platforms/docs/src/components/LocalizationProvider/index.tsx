@@ -1,6 +1,6 @@
 import React from 'react';
 import { LocalizationProvider as XlLocalizationProvider } from '@xl-vision/react';
-import { isDevelopment } from '@xl-vision/react/utils/env';
+import { env } from '@xl-vision/utils';
 import PropTypes from 'prop-types';
 import warning from '@xl-vision/react/utils/warning';
 import locales, { Locale } from './locales';
@@ -81,7 +81,7 @@ const LocalizationProvider: React.FunctionComponent<LocalizationProviderProps> =
   );
 };
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   LocalizationProvider.displayName = 'LocalizationProvider';
   LocalizationProvider.propTypes = {
     children: PropTypes.node,

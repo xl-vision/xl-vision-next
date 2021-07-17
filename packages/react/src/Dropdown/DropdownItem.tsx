@@ -2,10 +2,10 @@ import { CSSObject } from '@xl-vision/styled-engine-types';
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import BaseButton from '../BaseButton';
 import useEventCallback from '../hooks/useEventCallback';
 import { styled } from '../styles';
-import { isDevelopment } from '../utils/env';
 import DropdownContext from './DropdownContext';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 
@@ -103,7 +103,7 @@ const DropdownItem = React.forwardRef<HTMLLIElement, DropdownItemProps>((props, 
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   DropdownItem.displayName = displayName;
   DropdownItem.propTypes = {
     children: PropTypes.node.isRequired,

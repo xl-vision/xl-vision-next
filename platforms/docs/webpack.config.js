@@ -156,9 +156,11 @@ const defaultConfig = {
       '@mdx-js/react': require.resolve('@mdx-js/react'),
       'styled-components': require.resolve('styled-components'),
       // 'react-dom$': 'react-dom'
+      '@xl-vision/utils': packageResolve('utils'),
       '@xl-vision/styled-engine': packageResolve('styled-engine'),
-      '@xl-vision/react': packageResolve('react'),
       '@xl-vision/icons': packageResolve('icons'),
+      '@xl-vision/react': packageResolve('react'),
+      '@xl-vision/editor': packageResolve('editor'),
     },
   },
   optimization: {

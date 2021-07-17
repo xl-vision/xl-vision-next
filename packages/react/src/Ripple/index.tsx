@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import TransitionGroup, { TransitionGroupClasses } from '../TransitionGroup';
 import useEventCallback from '../hooks/useEventCallback';
 import { styled } from '../styles';
-import { isDevelopment } from '../utils/env';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 
 export interface RippleProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -210,7 +210,7 @@ const Ripple = React.forwardRef<RippleRef, RippleProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Ripple.displayName = displayName;
 
   Ripple.propTypes = {

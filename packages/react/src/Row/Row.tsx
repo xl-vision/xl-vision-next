@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { env } from '@xl-vision/utils';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import { ColProps } from './Col';
 import RowContext from './RowContext';
 import useMedia from './useMedia';
@@ -130,7 +130,7 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Row.displayName = displayName;
 
   Row.propTypes = {

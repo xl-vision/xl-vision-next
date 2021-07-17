@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import React from 'react';
+import { env } from '@xl-vision/utils';
 import Popper, { PopperChildrenProps, PopperProps, PopperTrigger } from '../Popper';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import useEventCallback from '../hooks/useEventCallback';
 import { oneOf } from '../utils/function';
 import usePropChange from '../hooks/usePropChange';
@@ -276,7 +276,7 @@ const Tooltip = React.forwardRef<unknown, TooltipProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Tooltip.displayName = displayName;
 
   const triggerPropType = PropTypes.oneOf<TooltipTrigger>([

@@ -5,6 +5,8 @@ const ignorePackages = [
   '^@xl-vision/styled-engine',
   '^@xl-vision/react',
   '^@xl-vision/icons',
+  '^@xl-vision/utils',
+  '^@xl-vision/editor',
 ];
 
 module.exports = {

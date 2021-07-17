@@ -1,9 +1,9 @@
 import React from 'react';
-import { isServer } from '../utils/env';
+import { env } from '@xl-vision/utils';
 import { voidFn } from '../utils/function';
 
 const matchMedia = (query: string) => {
-  if (isServer) {
+  if (env.isServer) {
     return {
       addListener: voidFn,
       matches: false,

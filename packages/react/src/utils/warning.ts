@@ -1,7 +1,7 @@
-import { isDevelopment } from './env';
+import { env } from '@xl-vision/utils';
 import { voidFn } from './function';
 
-export default isDevelopment
+export default env.isDevelopment
   ? (condition: boolean, format: string, ...args: Array<string>) => {
       if (condition) {
         printWarning(format, args);

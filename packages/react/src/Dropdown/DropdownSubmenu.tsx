@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { RightOutlined } from '@xl-vision/icons';
+import { env } from '@xl-vision/utils';
 import BaseButton from '../BaseButton';
 import useEventCallback from '../hooks/useEventCallback';
 import usePropChange from '../hooks/usePropChange';
 import Popper, { PopperPlacement, PopperProps, PopperTrigger } from '../Popper';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import DropdownContext from './DropdownContext';
 import Icon from '../Icon';
 
@@ -205,7 +205,7 @@ const DropdownSubmenu = React.forwardRef<HTMLDivElement, DropdownSubmenuProps>((
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   DropdownSubmenu.displayName = displayName;
 
   const triggerPropType = PropTypes.oneOf<PopperTrigger>([

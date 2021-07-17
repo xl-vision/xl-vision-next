@@ -1,9 +1,9 @@
-import { isServer } from './env';
+import { env } from '@xl-vision/utils';
 
 let cached: number;
 
 export default (refresh?: boolean) => {
-  if (isServer) {
+  if (env.isServer) {
     return 0;
   }
   if (!refresh && cached) {

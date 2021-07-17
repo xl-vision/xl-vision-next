@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ExclamationCircleOutlined } from '@xl-vision/icons';
+import { env } from '@xl-vision/utils';
 import Popper, { PopperProps, PopperTrigger } from '../Popper';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import Button, { ButtonProps } from '../Button';
 import LocalizationContext from '../LocalizationProvider/LocalizationContext';
 import Icon from '../Icon';
@@ -220,7 +220,7 @@ const Popconfirm = React.forwardRef<unknown, PopconfirmProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Popconfirm.displayName = displayName;
 
   const triggerPropType = PropTypes.oneOf<PopperTrigger>([

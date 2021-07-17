@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { env } from '@xl-vision/utils';
 import useEventCallback from '../hooks/useEventCallback';
 import Ripple, { RippleRef } from '../Ripple';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 
 export type BaseButtonCommonProps =
   | React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -226,7 +226,7 @@ const BaseButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, BaseB
   },
 );
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   BaseButton.displayName = displayName;
 
   BaseButton.propTypes = {

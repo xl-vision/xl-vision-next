@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { ThemeContext as StyledThemeContext } from '@xl-vision/styled-engine';
-import { isServer } from '../utils/env';
+import { env } from '@xl-vision/utils';
 import createMessageDialog, { MessageDialogType, MessageDialogProps } from './message';
 import { voidFn } from '../utils/function';
 import warningLog from '../utils/warning';
@@ -41,7 +41,7 @@ const method = (
   props: MessageDialogFunctionProps,
   type?: MessageDialogType,
 ): MessageDialogFunctionReturnType => {
-  if (isServer) {
+  if (env.isServer) {
     return {
       destroy: voidFn,
       update: voidFn,

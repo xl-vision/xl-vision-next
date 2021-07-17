@@ -1,4 +1,4 @@
-import { isServer } from './env';
+import { env } from '@xl-vision/utils';
 
 export type EventObject = Window | HTMLElement | Document;
 
@@ -33,7 +33,7 @@ export const on = <E extends EventObject, K extends keyof EventMap<E>>(
   listener: Listener<E, K>,
   options?: boolean | AddEventListenerOptions,
 ) => {
-  if (isServer) {
+  if (env.isServer) {
     return;
   }
 
@@ -46,7 +46,7 @@ export const off = <E extends EventObject, K extends keyof EventMap<E>>(
   listener: Listener<E, K>,
   options?: boolean | AddEventListenerOptions,
 ) => {
-  if (isServer) {
+  if (env.isServer) {
     return;
   }
 

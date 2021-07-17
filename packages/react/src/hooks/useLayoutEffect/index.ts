@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react';
-import { isBrowser } from '../../utils/env';
+import { env } from '@xl-vision/utils';
 
 // 修复在ssr中的警告
-export default isBrowser ? useLayoutEffect : useEffect;
+export default env.isBrowser ? useLayoutEffect : useEffect;

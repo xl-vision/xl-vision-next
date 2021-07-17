@@ -1,4 +1,4 @@
-import { isDevelopment } from '../../utils/env';
+import { env } from '@xl-vision/utils';
 import { dark as defaultDark, light as defaultLight, BaseColor } from './baseColor';
 import defaultThemes, { ThemeColors } from './themeColor';
 import { getContrastRatio, mix } from '../../utils/color';
@@ -44,7 +44,7 @@ const createColors = (color: Color = {}) => {
     const contrastText =
       getContrastRatio(background, dark.text.primary) >= contrastThreshold ? dark : light;
 
-    if (isDevelopment) {
+    if (env.isDevelopment) {
       const contrast = getContrastRatio(background, contrastText.text.primary);
       if (contrast < 3) {
         console.error(

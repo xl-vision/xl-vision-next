@@ -14,6 +14,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
+      "@xl-vision/utils": ["./packages/utils/src"],
+      "@xl-vision/utils/*": ["./packages/utils/src/*"],
       "@xl-vision/styled-engine-types": ["./packages/styled-engine-types/src"],
       "@xl-vision/styled-engine-types/*": ["./packages/styled-engine-types/src/*"],
       "@xl-vision/styled-engine": ["./packages/styled-engine/src"],
@@ -21,7 +23,9 @@
       "@xl-vision/icons": ["./packages/icons/src"],
       "@xl-vision/icons/*": ["./packages/icons/src/*"],
       "@xl-vision/react": ["./packages/react/src"],
-      "@xl-vision/react/*": ["./packages/react/src/*"]
+      "@xl-vision/react/*": ["./packages/react/src/*"],
+      "@xl-vision/editor": ["./packages/editor/src"],
+      "@xl-vision/editor/*": ["./packages/editor/src/*"]
     }
   },
   "exclude": ["**/node_modules", "**/modern", "**/legacy"]

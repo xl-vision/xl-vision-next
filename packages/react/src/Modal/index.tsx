@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import Portal, { PortalContainerType } from '../Portal';
-import { isBrowser, isDevelopment } from '../utils/env';
 import usePropChange from '../hooks/usePropChange';
 import CSSTransition from '../CSSTransition';
 import ThemeContext from '../ThemeProvider/ThemeContext';
@@ -129,7 +129,7 @@ const getClickPosition = (e: MouseEvent) => {
 };
 
 // 只有点击事件支持从鼠标位置动画展开
-if (isBrowser) {
+if (env.isBrowser) {
   document.documentElement.addEventListener('click', getClickPosition, true);
 }
 
@@ -358,7 +358,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Modal.displayName = displayName;
   Modal.propTypes = {
     getContainer: PropTypes.any,

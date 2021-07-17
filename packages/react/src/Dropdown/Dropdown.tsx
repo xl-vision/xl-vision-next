@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { env } from '@xl-vision/utils';
 import useEventCallback from '../hooks/useEventCallback';
 import usePropChange from '../hooks/usePropChange';
 import Popper, { PopperPlacement, PopperProps, PopperTrigger } from '../Popper';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import DropdownContext from './DropdownContext';
 
 export interface DropdownProps
@@ -125,7 +125,7 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>((props, ref) =>
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Dropdown.displayName = displayName;
 
   const triggerPropType = PropTypes.oneOf<PopperTrigger>([

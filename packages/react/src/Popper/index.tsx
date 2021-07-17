@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Instance, Placement, createPopper, Modifier } from '@popperjs/core';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import CSSTransition, { CSSTransitionElement, CSSTransitionProps } from '../CSSTransition';
 import useForkRef from '../hooks/useForkRef';
 import Portal, { PortalContainerType } from '../Portal';
-import { isDevelopment } from '../utils/env';
 import useEventCallback from '../hooks/useEventCallback';
 import { addClass, removeClass } from '../utils/class';
 import { forceReflow } from '../utils/transition';
@@ -508,7 +508,7 @@ const Popper = React.forwardRef<unknown, PopperProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Popper.displayName = displayName;
 
   const triggerPropType = PropTypes.oneOf<PopperTrigger>([

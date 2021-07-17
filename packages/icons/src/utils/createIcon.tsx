@@ -1,4 +1,5 @@
 import React from 'react';
+import { env } from '@xl-vision/utils';
 
 export default (svg: React.ReactElement<React.SVGProps<SVGSVGElement>>, displayName: string) => {
   const Component = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => {
@@ -8,7 +9,7 @@ export default (svg: React.ReactElement<React.SVGProps<SVGSVGElement>>, displayN
     });
   });
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (env.isDevelopment) {
     Component.displayName = displayName;
   }
   return Component;

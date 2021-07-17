@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { LoadingOutlined } from '@xl-vision/icons';
 import { keyframes } from '@xl-vision/styled-engine';
+import { env } from '@xl-vision/utils';
 import BaseButton, { BaseButtonProps } from '../BaseButton';
 import Icon from '../Icon';
 import { styled } from '../styles';
 import { ThemeColors } from '../ThemeProvider/color/themeColor';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 import CollapseTransition from '../CollapseTransition';
 import { alpha } from '../utils/color';
 
@@ -345,7 +345,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Button.displayName = displayName;
 
   Button.propTypes = {

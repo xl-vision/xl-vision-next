@@ -1,10 +1,10 @@
 import { CSSObject } from '@xl-vision/styled-engine-types';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { env } from '@xl-vision/utils';
 import { createGlobalStyles } from '../styles';
 import { Theme } from '../ThemeProvider';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 
 export type CssBaselineProps = {
   children?: React.ReactNode;
@@ -66,7 +66,7 @@ const CssBaseline: React.FunctionComponent<CssBaselineProps> = (props) => {
   );
 };
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   CssBaseline.displayName = 'CssBaseline';
   CssBaseline.propTypes = {
     children: PropTypes.node,

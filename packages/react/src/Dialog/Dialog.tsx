@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Proptypes from 'prop-types';
-import { isDevelopment } from '../utils/env';
+import { env } from '@xl-vision/utils';
 import Modal, { ModalProps } from '../Modal';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 import { styled } from '../styles';
@@ -226,7 +226,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Dialog.displayName = displayName;
   Dialog.propTypes = {
     children: Proptypes.node,

@@ -2,9 +2,9 @@ import { CSSObject } from '@xl-vision/styled-engine-types';
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import { styled } from '../styles';
 import RowContext from './RowContext';
-import { isDevelopment } from '../utils/env';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 
 export type ColSpanType = number | Partial<Record<string, number>>;
@@ -187,7 +187,7 @@ const Col = React.forwardRef<HTMLDivElement, ColProps>((props, ref) => {
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Col.displayName = displayName;
 
   Col.propTypes = {

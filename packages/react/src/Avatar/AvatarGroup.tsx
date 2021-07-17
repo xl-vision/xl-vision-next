@@ -1,10 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { env } from '@xl-vision/utils';
 import Avatar, { AvatarProps, AvatarShape, AvatarSize, AvatarSizeType } from './Avatar';
 import Popover from '../Popover';
 import { styled } from '../styles';
-import { isDevelopment } from '../utils/env';
 import AvatarContext from './AvatarContext';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 
@@ -114,7 +114,7 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>((props, r
   );
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   AvatarGroup.displayName = displayName;
   AvatarGroup.propTypes = {
     children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,

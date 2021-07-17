@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { env } from '@xl-vision/utils';
 import { styled } from '../styles';
 import BaseIcon, { BaseIconProps } from './BaseIcon';
-import { isDevelopment } from '../utils/env';
 import ThemeContext from '../ThemeProvider/ThemeContext';
 
 export interface IconProps extends BaseIconProps {}
@@ -36,7 +36,7 @@ const Icon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   return <IconRoot {...others} className={rootClasses} ref={ref} />;
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   Icon.displayName = 'Icon';
 
   Icon.propTypes = {

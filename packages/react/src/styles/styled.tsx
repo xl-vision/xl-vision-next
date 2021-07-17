@@ -7,7 +7,7 @@ import {
 } from '@xl-vision/styled-engine-types';
 import innerStyled from '@xl-vision/styled-engine';
 import React from 'react';
-import { isDevelopment } from '../utils/env';
+import { env } from '@xl-vision/utils';
 import { Theme } from '../ThemeProvider/createTheme';
 import { Style } from '../ThemeProvider/overrideStyles';
 import applyTheme from './applyTheme';
@@ -47,7 +47,7 @@ const styled = <
 
   const defaultCreateStyledComponent = innerStyled<Tag, ForwardedProps>(tag, {
     shouldForwardProp: shouldForwardProp as ShouldForwardProp<ForwardedProps>,
-    ...(isDevelopment && { prefix: prefix || undefined }),
+    ...(env.isDevelopment && { prefix: prefix || undefined }),
   });
 
   const overrideCreateStyledComponent = <
@@ -106,7 +106,7 @@ const styled = <
 
     const DefaultComponent = defaultCreateStyledComponent<P & V>(newFirst, ...newStyles);
 
-    if (isDevelopment) {
+    if (env.isDevelopment) {
       DefaultComponent.displayName = displayName;
     }
 

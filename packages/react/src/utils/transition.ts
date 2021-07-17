@@ -1,10 +1,10 @@
-import { isBrowser, isServer } from './env';
+import { env } from '@xl-vision/utils';
 import { voidFn } from './function';
 
 let TRANSITION_NAME = 'transition';
 let ANIMATION_NAME = 'animation';
 
-if (isBrowser) {
+if (env.isBrowser) {
   if (!('ontransitionend' in window) && 'onwebkittransitionend' in window) {
     TRANSITION_NAME = 'webkitTransition';
   }
@@ -94,7 +94,7 @@ export const onTransitionEnd = (el: HTMLElement, done: () => void) => {
 };
 
 export const raf = (fn: () => void) => {
-  if (isServer) {
+  if (env.isServer) {
     fn();
     return voidFn;
   }
@@ -125,7 +125,7 @@ export const nextFrame = (fn: () => void) => {
 };
 
 export const forceReflow = () => {
-  if (isBrowser) {
+  if (env.isBrowser) {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     document.body.scrollHeight;
   }

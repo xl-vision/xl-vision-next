@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isDevelopment } from '../utils/env';
+import { env } from '@xl-vision/utils';
 
 export interface BaseIconProps extends React.SVGProps<SVGSVGElement> {
   children: React.ReactElement<React.SVGProps<SVGSVGElement>>;
@@ -14,7 +14,7 @@ const BaseIcon = React.forwardRef<SVGSVGElement, BaseIconProps>((props, ref) => 
   });
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   BaseIcon.displayName = 'BaseIcon';
 
   BaseIcon.propTypes = {

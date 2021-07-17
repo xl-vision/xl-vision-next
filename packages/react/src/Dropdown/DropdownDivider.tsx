@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { env } from '@xl-vision/utils';
 import { styled } from '../styles';
 import ThemeContext from '../ThemeProvider/ThemeContext';
-import { isDevelopment } from '../utils/env';
 
 export interface DropdownDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -33,7 +33,7 @@ const DropdownDivider = React.forwardRef<HTMLDivElement, DropdownDividerProps>((
   return <DropdownDividerRoot {...others} ref={ref} className={rootClasses} />;
 });
 
-if (isDevelopment) {
+if (env.isDevelopment) {
   DropdownDivider.displayName = displayName;
   DropdownDivider.propTypes = {
     className: PropTypes.string,

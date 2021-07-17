@@ -35,6 +35,7 @@
     "@babel/runtime": "^7.12.5",
     "@popperjs/core": "^2.9.0",
     "@xl-vision/icons": "^0.1.1-alpha.5",
+    "@xl-vision/utils": "^0.1.1-alpha.6",
     "clsx": "^1.1.1",
     "prop-types": "^15.7.2",
     "resize-observer-polyfill": "^1.5.1"
