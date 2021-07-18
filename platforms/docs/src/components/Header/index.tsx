@@ -48,10 +48,13 @@ const HeaderNav = styled('header')<{ isDark: boolean }>(({ theme, styleProps }) 
   };
 });
 
-const Logo = styled('div')(({ theme }) => {
+const Logo = styled(NavLink)(({ theme }) => {
   return {
+    display: 'inline-block',
     fontSize: 18,
     fontWeight: theme.typography.fontWeight.bold,
+    color: theme.color.themes.primary.color,
+    textDecoration: 'none',
   };
 });
 
@@ -92,7 +95,9 @@ const Header = () => {
   return (
     <Container>
       <HeaderNav styleProps={{ isDark }}>
-        <Logo>XL-VISION</Logo>
+        <Logo exact={true} to='/'>
+          XL-VISION
+        </Logo>
         <Menus>
           <li>
             <NavLink to='/components'>{locale.header.component}</NavLink>

@@ -7,6 +7,11 @@ const routes: Array<Route> = [
     path: '/',
     component: () => import('../../views/editor/index.zh-CN.mdx'),
   },
+  {
+    name: '基本用法',
+    path: '/basic',
+    component: () => import('../../views/editor/basic/index.zh-CN.mdx'),
+  },
 ];
 
 export default routes;

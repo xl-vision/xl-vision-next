@@ -1,3 +1,6 @@
+declare module 'slate';
+declare module 'slate-react';
+
 declare module '*.md';
 declare module '*.css';
 declare module '*.mdx' {

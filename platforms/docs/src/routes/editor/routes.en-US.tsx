@@ -7,6 +7,11 @@ const routes: Array<Route> = [
     path: '/',
     component: () => import('../../views/editor/index.en-US.mdx'),
   },
+  {
+    name: 'Basic',
+    path: '/basic',
+    component: () => import('../../views/editor/basic/index.en-US.mdx'),
+  },
 ];
 
 export default routes;
