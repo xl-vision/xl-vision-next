@@ -28,5 +28,5 @@
       "@xl-vision/editor/*": ["./packages/editor/src/*"]
     }
   },
-  "exclude": ["**/node_modules", "**/modern", "**/legacy"]
+  "exclude": ["**/node_modules", "**/modern", "**/legacy", "**/dist"]
 }

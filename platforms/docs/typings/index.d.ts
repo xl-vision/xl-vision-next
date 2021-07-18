@@ -1,12 +1,11 @@
-declare module 'slate';
-declare module 'slate-react';
-
 declare module '*.md';
 declare module '*.css';
+
 declare module '*.mdx' {
   const MDXComponent: React.ComponentType<any>;
   export default MDXComponent;
 }
+
 declare module '@mdx-js/react' {
   import * as React from 'react';
 
