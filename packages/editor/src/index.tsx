@@ -1,35 +1,10 @@
-import { Slate, Editable, withReact, ReactEditor, RenderElementProps } from 'slate-react';
-import { createEditor, Descendant, BaseEditor } from 'slate';
+import { Slate, Editable, withReact, RenderElementProps } from 'slate-react';
+import { createEditor, Descendant } from 'slate';
 import { env } from '@xl-vision/utils';
 import React from 'react';
-import { withHistory, HistoryEditor } from 'slate-history';
+import { withHistory } from 'slate-history';
 
-export type CustomEditor = BaseEditor & ReactEditor & HistoryEditor;
-
-export type ParagraphElement = {
-  type: 'paragraph';
-  children: Array<CustomText>;
-};
-
-export type HeadingElement = {
-  type: 'heading';
-  level: number;
-  children: Array<CustomText>;
-};
-
-export type CustomElement = ParagraphElement | HeadingElement;
-
-export type FormattedText = { text: string; bold?: true };
-
-export type CustomText = FormattedText;
-
-declare module 'slate' {
-  interface CustomTypes {
-    Editor: CustomEditor;
-    Element: CustomElement;
-    Text: CustomText;
-  }
-}
+import './types';
 
 export type EditorProps = {};
 
